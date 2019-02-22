@@ -185,6 +185,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     
     func resetScene (){
         // Move bird to original position and reset velocity
+        hideGameOver()
         bird.position = CGPoint(x: self.frame.size.width / 2.5, y: self.frame.midY)
         bird.physicsBody?.velocity = CGVector( dx: 0, dy: 0 )
         bird.physicsBody?.collisionBitMask = worldCategory | pipeCategory
@@ -231,7 +232,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
                 // Add a little visual feedback for the score increment
                 scoreLabelNode.run(SKAction.sequence([SKAction.scale(to: 1.5, duration:TimeInterval(0.1)), SKAction.scale(to: 1.0, duration:TimeInterval(0.1))]))
             } else {
-                
+              
+                //game over happened
+                showGameOver()
                 moving.speed = 0
                 
                 bird.physicsBody?.collisionBitMask = worldCategory
@@ -250,4 +253,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             }
         }
     }
+  
+  
 }
