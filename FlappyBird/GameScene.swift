@@ -9,6 +9,8 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
+  
+  var curMenu :UIView?
     let verticalPipeGap = 150.0
     
     var bird:SKSpriteNode!
@@ -212,7 +214,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
                 bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 30))
             }
         } else if canRestart {
-            self.resetScene()
+            //self.resetScene()
         }
     }
     

@@ -10,13 +10,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameOverMenuView" customModule="FlappyBird" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Op8-Mz-t1j"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54Y-4q-BC7">
+                    <rect key="frame" x="8" y="322.5" width="359" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCk-i7-IrG">
+                    <rect key="frame" x="144" y="380.5" width="87" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="re-try?"/>
+                    <connections>
+                        <action selector="pressedRetry:" destination="-1" eventType="touchUpInside" id="B1g-Ea-e3e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc6-au-dqw">
+                    <rect key="frame" x="128" y="444.5" width="119" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="main menu"/>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="54Y-4q-BC7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="4AS-wB-uix"/>
+                <constraint firstItem="54Y-4q-BC7" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="5oV-7r-TTp"/>
+                <constraint firstItem="yCk-i7-IrG" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="C6c-xe-04g"/>
+                <constraint firstItem="54Y-4q-BC7" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Xqe-1X-OQv"/>
+                <constraint firstItem="yCk-i7-IrG" firstAttribute="top" secondItem="54Y-4q-BC7" secondAttribute="bottom" constant="16" id="Zyh-Qy-10d"/>
+                <constraint firstItem="Tc6-au-dqw" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="bGk-b2-A54"/>
+                <constraint firstItem="Tc6-au-dqw" firstAttribute="top" secondItem="yCk-i7-IrG" secondAttribute="bottom" constant="16" id="d9u-co-RKS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="54Y-4q-BC7" secondAttribute="trailing" constant="8" id="euI-sn-015"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="39.200000000000003" y="46.326836581709152"/>
         </view>
     </objects>
 </document>
